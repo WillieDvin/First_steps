@@ -37,12 +37,52 @@ Sublime Text 3\Packages\User\user.sublime-keymap
 	},
 ]
 
+python311.sublime-build
+	"cmd": [" '#yourpath to' python", "-u", "$file"],
+	"selector": "source.python"
+  	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+ 	"quiet": true
+	
+
+
 5. More Sublime Text 3 Packages:
 	"Package Control",		
 	"Anaconda",
+		
 	"SideBarEnhancements",
 	"AutoFileName",
 	"PySide",
-6. Color Schemes, themes
+6. Color Schemes, themes:
 	"Atomic Color Scheme",
 	"Color Scheme - Vintage Terminal",
+	
+
+
+P.S.
+1.To log your actions in Sublime Text 3
+shit+~ to open console,
+and type:
+sublime.log_commands(False)
+
+2. Solve Anaconda problems:
+Sublime Text 3\Packages\User\Anaconda.sublime-settings
+{
+	"swallow_startup_errors": true,
+	"auto_formatting": true,
+    "autoformat_ignore":
+    [
+    ],
+    "pep8_ignore":
+    [
+        "E501"
+    ],
+    "anaconda_linter_underlines": false,
+    "anaconda_linter_mark_style": "none",
+    "display_signatures": false,
+    "disable_anaconda_completion": true,
+    "python_interpreter": "'#your path to'/python"
+}
+
+3. Anaconda. Deleting frameworks(linting)
+Sublime Text 3\Packages\Anaconda\Anaconda.sublime-settings
+"anaconda_linting": false 
