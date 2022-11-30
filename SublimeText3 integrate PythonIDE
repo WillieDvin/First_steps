@@ -1,0 +1,80 @@
+#Integrating python IDE in Sublime Text 3
+1. Install Package Control
+2. Install SublimeREPL package
+3. Create "New Build System" in Tools:
+\Sublime Text 3\Packages\User\PythonREPL.sublime-build:
+	
+  	{  "target": "run_existing_window_command", 
+ 	   "id": "repl_python_run",
+  	   "file": "config/Python/Main.sublime-menu",}
+	
+4. Create user "Key_Bindings" in "Preferences" for starting interactive interpreter:
+\Sublime Text 3\Packages\User\user.sublime-keymap
+[     { "keys": ["ctrl+f10"],
+		"command": "repl_transfer_current",
+		"args": {"scope": "file"} },
+	
+      { "keys": ["ctrl+f11"],
+		"command": "repl_open",
+		"args": {"cmd": ["python", "-u", "-i", "$file_basename"],
+	 		 "cwd": "$file_path",
+	 		 "encoding": "utf8",
+			 "extend_env": {"PYTHONIOENCODING": "utf-8"},
+	 		 "external_id": "python",
+	 		 "syntax": "Packages/Python/Python.tmLanguage",
+	 		 "type": "subprocess"} },
+	 
+      { "keys": ["ctrl+shift+c"], 
+		"command": "cancel_build"},    ]
+
+\Sublime Text 3\Packages\User\python311.sublime-build
+	"cmd": [" '#yourpath to' python", "-u", "$file"],
+	"selector": "source.python"
+  	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+ 	"quiet": true
+
+5. More Sublime Text 3 Packages:
+	"Package Control",		
+	"Anaconda",
+	"SideBarEnhancements",
+	"AutoFileName",
+	"PySide",
+6. Color Schemes, themes:
+	"Atomic Color Scheme",
+	"Color Scheme - Vintage Terminal",
+	
+------//------//------
+
+P.S.
+1.To log your actions in Sublime Text 3:
+shit +"~" to open console,
+and type:
+sublime.log_commands(True)
+
+finish loging:
+sublime.log_commands(False)
+
+2. Solve Anaconda problems:
+\Sublime Text 3\Packages\User\Anaconda.sublime-settings
+
+   { "swallow_startup_errors": true,
+     "auto_formatting": true,
+     "autoformat_ignore":
+     [
+     ],
+     "pep8_ignore":
+     [
+     "E501"
+     ],
+     "anaconda_linter_underlines": false,
+     "anaconda_linter_mark_style": "none",
+     "display_signatures": false,
+     "disable_anaconda_completion": true,
+     "python_interpreter": "'#your path to'/python" }
+
+3. Anaconda again. 
+Deleting frameworks(linting):
+\Sublime Text 3\Packages\Anaconda\Anaconda.sublime-settings:
+Find string:
+     "anaconda_linting": true,
+change to false
