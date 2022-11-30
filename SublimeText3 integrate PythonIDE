@@ -28,6 +28,11 @@ able to initiate an interactive interpreter on button click:
 	 
       { "keys": ["ctrl+shift+c"], 
 		"command": "cancel_build"},    ]
+		
+Check command sublimetext sends to bash/terminal.
+And which Python version does it call?
+\Sublime Text 3\Packages\SublimeREPL\config\Python\Main.sublime-menu:
+	... "cmd": ["python", "-i", "-u", ...
 
 \Sublime Text 3\Packages\User\python311.sublime-build:
 	"cmd": [" '#yourpath to' python", "-u", "$file"],
