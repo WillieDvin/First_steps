@@ -1,15 +1,17 @@
 #Integrating python IDE in Sublime Text 3
 1. Install Package Control
 2. Install SublimeREPL package
-3. Create "New Build System" in Tools:
+3. Create "New Build System" in "Tools"->"Build System"->"New Build System":
 \Sublime Text 3\Packages\User\PythonREPL.sublime-build:
 	
   	{  "target": "run_existing_window_command", 
  	   "id": "repl_python_run",
   	   "file": "config/Python/Main.sublime-menu",}
 	
-4. Create user "Key_Bindings" in "Preferences" for starting interactive interpreter:
-\Sublime Text 3\Packages\User\user.sublime-keymap
+4. Create "user Key_Bindings" in "Preferences" to be 
+able to initiate an interactive interpreter on button click:
+\Sublime Text 3\Packages\User\user.sublime-keymap:
+
 [     { "keys": ["ctrl+f10"],
 		"command": "repl_transfer_current",
 		"args": {"scope": "file"} },
@@ -27,7 +29,7 @@
       { "keys": ["ctrl+shift+c"], 
 		"command": "cancel_build"},    ]
 
-\Sublime Text 3\Packages\User\python311.sublime-build
+\Sublime Text 3\Packages\User\python311.sublime-build:
 	"cmd": [" '#yourpath to' python", "-u", "$file"],
 	"selector": "source.python"
   	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
