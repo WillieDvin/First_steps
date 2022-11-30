@@ -30,7 +30,7 @@ able to initiate an interactive interpreter on button click:
 		"command": "cancel_build"},    ]
 		
 Check command sublimetext sends to bash/terminal.
-And which Python version does it call?
+And which Python version does it call in the terminal?
 \Sublime Text 3\Packages\SublimeREPL\config\Python\Main.sublime-menu:
 	... "cmd": ["python", "-i", "-u", ...
 
@@ -61,7 +61,10 @@ sublime.log_commands(True)
 finish loging:
 sublime.log_commands(False)
 
-2. Solve Anaconda problems:
+2. sublime-link in linux bash terminal:
+ls -la /usr/bin | grep subl
+
+3. Solve Anaconda problems:
 \Sublime Text 3\Packages\User\Anaconda.sublime-settings
 
    { "swallow_startup_errors": true,
@@ -79,7 +82,7 @@ sublime.log_commands(False)
      "disable_anaconda_completion": true,
      "python_interpreter": "'#your path to'/python" }
 
-3. Anaconda again. 
+4. Anaconda again. 
 Deleting frameworks(linting):
 \Sublime Text 3\Packages\Anaconda\Anaconda.sublime-settings:
 Find string:
