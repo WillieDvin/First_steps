@@ -62,8 +62,9 @@ sublime.log_commands(True)
 finish loging:
 sublime.log_commands(False)
 
-2. sublime-link in linux bash terminal:
+2. Start sublime from terminal. add sublime-link:
 ls -la /usr/bin | grep subl
+Add SublimeText3\subl.exe PATH to list of environment variables on Windows 10
 
 3. Solve Anaconda problems:
 \Sublime Text 3\Packages\User\Anaconda.sublime-settings
